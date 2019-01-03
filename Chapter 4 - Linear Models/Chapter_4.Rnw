@@ -163,5 +163,41 @@ $\sigma$ $\sim$ Uniform(0, 50)
 A sample of students is measured for height each year for 3 years. After the third year, you want to fit a linear regression predicting height using year as a predictor. Write down the mathematical model for this regression, using any variable names and priors you choose. Be prepared to defend your choice of priors.
 \end{problem}
 
+Model:
+\begin{center}
+y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
+$\alpha$ $\sim$ Normal(152, 25)\\
+$\beta$ $\sim$ Normal(6, 3)\\
+$\sigma$ $\sim$ Uniform(0, 50)
+\end{center}
+
+The priors for $\alpha$ represent an average of about 5 feet (152 cm) and a standard deviation of about 10 inches (25 cm).
+The priors for $\beta$ represent an average increase of about 2.4 inches per year (6 cm - chosen using average growth rate for children) and a standard deviation of about 1.19 inches (3 cm).
+The prior for $\sigma$ is a uniform prior between 0 and 50.
+
+\begin{problem}{4M5}
+\text{}\\
+Now suppose I tell you that the average height in the first year was 120 cm and that every student got taller each year and every student got taller each year. Does this information lead you to change your choice of prior?
+\end{problem}
+
+With this no information, we should adjust $\alpha$. We now have:
+\begin{center}
+y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
+$\alpha$ $\sim$ Normal(120, 25)\\
+$\beta$ $\sim$ Normal(6, 3)\\
+$\sigma$ $\sim$ Uniform(0, 50)
+\end{center}
+
+The priors for $\alpha$ have been adjusted to account for the new information we have about the average height in the first year.
+We already chose $\beta$ as a positive number with a relatively small standard deviation, so the information about students growing taller each year does not effect our choice of prior.
+
+\begin{problem}{4M6}
+\text{}\\
+Now suppose I tell you that the variance among heights for students of the same age is never more than 64 cm. How does this lead you to revise your priors?
+\end{problem}
+
+$\sigma$ is just the square root of the variance. Thus, we would like $\beta$'s standard deviation to be less than $\sqrt{64}=8$. Since we already chose a standard deviation of 3 cm, we do not need to revise this choice.
 
 \end{document}

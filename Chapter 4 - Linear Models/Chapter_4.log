@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  2 JAN 2019 20:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  2 JAN 2019 22:47
 entering extended mode
 **./Chapter_4.tex
 (Chapter_4.tex
@@ -958,39 +958,21 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 160--161
  []
 
 [2]
-! Undefined control sequence.
-l.166 Translate the model just above into a \texit
-                                                  {map} formula.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Package color Info: Redefining color shadecolor on input line 170.
-! Undefined control sequence.
-l.183 Translate the \texit
-                          {map} model formula below into a mathematical mode...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Package color Info: Redefining color shadecolor on input line 186.
-[3 <./figure/unnamed-chunk-2-1.pdf>] [4] (Chapter_4.aux) )
+ [3 <./figure/unnamed-chunk-2-1.pdf>] [4] [5] (Chapter_4.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 116 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  4522 strings out of 492970
- 66298 string characters out of 3126593
- 131198 words of memory out of 3000000
+ 66348 string characters out of 3126593
+ 132198 words of memory out of 3000000
  8266 multiletter control sequences out of 15000+200000
  77693 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,32p,367b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,9n,32p,367b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
 ps/lm/lm-ec.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
 ps/lm/lm-mathex.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
@@ -1007,9 +989,9 @@ rograms/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Chris/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Chris/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Chris/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Chapter_4.pdf (4 pages, 180921 bytes).
+Output written on Chapter_4.pdf (5 pages, 190794 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
