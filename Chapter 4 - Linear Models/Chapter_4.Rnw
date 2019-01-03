@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Statistical Rethinking: Chapter 4 - Linear Models}
+
+\author{Chris Hayduk}
+\date{\today}
+
+\maketitle
+
+
+<<echo=F, results = 'hide', warning=FALSE, message=FALSE>>=
+# set the global chunk options
+opts_chunk$set(message=FALSE, # don't print R messages in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+               warning=FALSE) # don't print warnings in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+
+# load .RData files, .R files, etc.
+# R packages required
+suppressMessages(library(xtable, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
+suppressMessages(library(tidyverse, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+suppressMessages(library(rethinking, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+@
+
+\section{Easy}
+
+\begin{problem}{4E1}
+\text{ }\\
+In the model definition below, which line is the likelihood?
+\begin{enumerate}
+	\item y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)
+	\item $\mu$ $\sim$ Normal(0, 10)
+	\item $\sigma$ $\sim$ Uniform(0, 10)
+\end{enumerate}
+\end{problem}
+
+Line 1 represents the likelihood.
+
+\begin{problem}{4E2}
+\text{ }\\
+In the model definition just above, how many parameters are in the posterior distribution?
+\end{problem}
+
+There are two parameters: $\mu$ and $\sigma$.
+
+\begin{problem}{4E3}
+\text{ }\\
+Using the model definition above, write down the appropriate form of Bayes' theorem that includes the proper likelihood and priors.
+\end{problem}
+
+Pr($\mu$, $\sigma$\vert$y) = \textfrac{$\Pi$\textsubscript{i}Normal(y\textsubscript{i}$\vert$\mu$, $\sigma$) Normal($\mu$\vert$0, 10) Uniform($\sigma$\vert$0, 10)}{$\int$\int$\Pi$\textsubscript{i}Normal(y\textsubscript{i}$\vert$\mu$, $\sigma$) Normal($\mu$\vert$0, 10) Uniform($\sigma$\vert$0, 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+
+\begin{problem}{4E4}
+\text{ }\\
+In the model definition below, which line is the linear model?
+\begin{enumerate}
+	\item y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}
+	\item $\alpha$ $\sim$ Normal(0, 10)
+	\item $\beta$ $\sim$ Normal(0, 10)
+	\item $\sigma$ $\sim$ Uniform(0, 10)
+\end{enumerate}
+\end{problem}
+
+Line 2 represents the linear model.
+
+\begin{problem}{4E5}
+\text{ }\\
+In the model definition just above, how many parameters are in the posterior distribution?
+\end{problem}
+
+There are three parameters: $\alpha$, $\beta$, and $\sigma$.
+
+\section{Medium}
+
+\begin{problem}{4M1}
+\text{}\\
+For the model definition below, simulate the observed heights from the prior (not the posterior).
+\begin{center}
+y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+$\mu$ $\sim$ Normal(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 10)
+\end{center}
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+sample_mu <- rnorm(1e4, 0, 10)
+sample_sigma <- runif(1e4, 0, 10)
+prior_h <- rnorm(1e4, sample_mu, sample_sigma)
+dens(prior_h)
+
+@
+
+\begin{problem}{4M2}
+\text{}\\
+Translate the model just above into a \textit{map} formula.
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+flist <- alist(
+  y ~ dnorm(mu, sigma),
+  mu ~ dnorm(0, 10),
+  sigma ~ dunif(0, 10)
+)
+
+@
+
+\begin{problem}{4M3}
+\text{}\\
+Translate the \textit{map} model formula below into a mathematical model definition.
+
+<<warning=FALSE, message=FALSE>>=
+
+flist <- alist(
+  y ~ dnorm(mu, sigma),
+  mu <- a +b*x,
+  a ~ dnorm(0, 50),
+  b ~ dunif(0, 10),
+  sigma ~ dunif(0, 50)
+)
+
+@
+\end{problem}
+
+Model:
+\begin{center}
+y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
+$\alpha$ $\sim$ Normal(0, 50)\\
+$\beta$ $\sim$ Uniform(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 50)
+\end{center}
+
+\begin{problem}{4M4}
+\text{}\\
+A sample of students is measured for height each year for 3 years. After the third year, you want to fit a linear regression predicting height using year as a predictor. Write down the mathematical model for this regression, using any variable names and priors you choose. Be prepared to defend your choice of priors.
+\end{problem}
+
+
+\end{document}
