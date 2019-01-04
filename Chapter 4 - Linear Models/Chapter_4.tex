@@ -200,7 +200,7 @@ Translate the \textit{map} model formula below into a mathematical model definit
 
 Model:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(0, 50)\\
 $\beta$ $\sim$ Uniform(0, 10)\\
@@ -214,7 +214,7 @@ A sample of students is measured for height each year for 3 years. After the thi
 
 Model:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(152, 25)\\
 $\beta$ $\sim$ Normal(6, 3)\\
@@ -232,7 +232,7 @@ Now suppose I tell you that the average height in the first year was 120 cm and 
 
 With this no information, we should adjust $\alpha$. We now have:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(120, 25)\\
 $\beta$ $\sim$ Normal(6, 3)\\
@@ -284,7 +284,7 @@ The weights listed below were recorded in the !Kung census, but heights were not
 \hlkwd{print}\hlstd{(mean.height)}
 \end{alltt}
 \begin{verbatim}
-## [1] 158.3036 152.4159 189.8263 132.8623 171.8030
+## [1] 158.2247 152.4695 189.6582 132.7213 171.8540
 \end{verbatim}
 \begin{alltt}
 \hlstd{height.PI} \hlkwb{<-} \hlkwd{apply}\hlstd{(sim.height,} \hlnum{2}\hlstd{, PI,} \hlkwc{prob}\hlstd{=}\hlnum{0.89}\hlstd{)}
@@ -293,8 +293,8 @@ The weights listed below were recorded in the !Kung census, but heights were not
 \end{alltt}
 \begin{verbatim}
 ##         [,1]     [,2]     [,3]     [,4]     [,5]
-## 5%  143.4731 137.5300 174.5770 117.9404 156.6272
-## 94% 172.9770 167.1276 205.0343 147.6429 186.8567
+## 5%  143.4416 137.6086 174.4575 117.6613 156.9577
+## 94% 173.2767 167.3117 205.1101 147.7628 186.9470
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -368,7 +368,7 @@ Select out all the rows in the Howell1 data with ages below 18 years of age. If 
 ## 
 ## MAP values:
 ##         a         b     sigma 
-## 58.256305  2.718934  8.437108 
+## 58.256579  2.718923  8.437103 
 ## 
 ## Log-likelihood: -681.9
 \end{verbatim}
@@ -483,7 +483,7 @@ Then use samples from the quadratic approximate posterior of the model in (a) to
 ## 
 ## MAP values:
 ##          a          b      sigma 
-## -23.785521  47.075738   5.134498 
+## -23.784397  47.075377   5.134705 
 ## 
 ## Log-likelihood: -1661.9
 \end{verbatim}

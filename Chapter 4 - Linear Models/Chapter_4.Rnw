@@ -152,7 +152,7 @@ flist <- alist(
 
 Model:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(0, 50)\\
 $\beta$ $\sim$ Uniform(0, 10)\\
@@ -166,7 +166,7 @@ A sample of students is measured for height each year for 3 years. After the thi
 
 Model:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(152, 25)\\
 $\beta$ $\sim$ Normal(6, 3)\\
@@ -184,7 +184,7 @@ Now suppose I tell you that the average height in the first year was 120 cm and 
 
 With this no information, we should adjust $\alpha$. We now have:
 \begin{center}
-y\textsubscript{i} $\sim$ Normal($\mu$, $\sigma$)\\
+y\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
 $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}\\
 $\alpha$ $\sim$ Normal(120, 25)\\
 $\beta$ $\sim$ Normal(6, 3)\\
