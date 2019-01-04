@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
  
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
@@ -199,5 +200,219 @@ Now suppose I tell you that the variance among heights for students of the same 
 \end{problem}
 
 $\sigma$ is just the square root of the variance. Thus, we would like $\beta$'s standard deviation to be less than $\sqrt{64}=8$. Since we already chose a standard deviation of 3 cm, we do not need to revise this choice.
+
+\section{Hard}
+
+\begin{problem}{4H1}
+\text{}\\
+The weights listed below were recorded in the !Kung census, but heights were not recorded for these individuals. Provide predicted heights and 89\% intervals (either HPDI or PI) for each of these individuals. That is, fill in the table below, using model-based predictions.
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+data(Howell1)
+
+d1 <- Howell1
+
+m1 <- map(
+  alist(
+    height ~ dnorm(a + b*weight, sigma),
+    a ~ dnorm(178, 100),
+    b ~ dnorm(0, 10),
+    sigma ~ dunif(0, 50)
+  ), data = d1)
+
+weights <- c(46.95, 43.72, 64.78, 32.59, 54.63)
+
+sim.height <- sim(m1, data=list(weight=weights), n = 1e4, silent = TRUE)
+
+mean.height <- apply(sim.height, 2, mean)
+
+print(mean.height)
+
+height.PI <- apply(sim.height, 2, PI, prob=0.89)
+
+print(height.PI)
+
+@
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ Individual & weight & expected height & 89\% interval \\ [0.5ex] 
+ \hline\hline
+ 1 & 46.95 & 158.43 & (143.67, 173.42) \\ 
+ \hline
+ 2 & 43.72 & 152.56 & (137.83, 167.69) \\
+ \hline
+ 3 & 64.78 & 189.54 & (174.28, 204.93) \\
+ \hline
+ 4 & 32.59 & 133.09 & (118.25, 148.41) \\
+ \hline
+ 5 & 54.63 & 171.67 & (156.48, 186.94) \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{problem}{4H2}
+\text{}\\
+Select out all the rows in the Howell1 data with ages below 18 years of age. If you do it right, you should end up with a new data frame with 192 rows in it.
+\begin{enumerate}[(a)]
+\item Fit a linear regression to these data, using \textit{map}. Present and interpret the estimates. For every 10 units of increase in weight, how much taller does the model predict a child gets?
+\item Plot the raw data, with height on the vertical axis and weight on the horizontal axis. Superimpose the MAP regression line and 89\% HPDI for the mean. Also superimpose the 89\% HPDI for predicted heights.
+\item What aspects of the model fit concern you? Describe the kinds of assumptions you would change, if any, to improve the model. You don't have to write any new code. Just explain what the model appears to be doing a bad job of, and what you hypothesize would be a better model.
+\end{enumerate}
+\end{problem}
+\\
+\begin{enumerate}[(a)]
+\item 
+
+<<warning=FALSE, message=FALSE>>=
+
+d2 <- Howell1
+d2 <- d2[d2$age < 18, ]
+
+str(d2)
+
+m2 <- map(
+  alist(
+    height ~ dnorm(a + b*weight, sigma),
+    a ~ dnorm(178, 100),
+    b ~ dnorm(0, 10),
+    sigma ~ dunif(0, 50)
+  ), data = d2)
+
+print(m2)
+
+@
+
+For every 10 units of increase in weight, height increases by 10*b $\approx\ 27.
+
+\item 
+
+<<warning=FALSE, message=FALSE>>=
+
+#Define sequence of weights to compute predictions for
+#These values will be on the horizontal axis
+weight.seq <- seq(from = 0, to = 50, by = 1)
+
+#Use link to compute mu for each sample from the posterior
+#and for each weight in weight.seq
+post <- extract.samples(m2)
+mu.link <- function(weight) post$a + post$b*weight
+mu <- sapply(weight.seq, mu.link)
+
+#Summarize the distribution of mu
+mu.mean <- apply(mu, 2, mean)
+mu.HPDI <- apply(mu, 2, HPDI, prob = 0.89)
+
+#Simulate heights from the posterior
+sim.height <- sim(m2, data=list(weight=weight.seq))
+
+#Summarize the simulated heights
+height.PI <- apply(sim.height, 2, PI, prob=0.89)
+
+#Plot raw data
+plot(height ~ weight, d2, col=col.alpha(rangi2, 0.5))
+
+#Draw MAP line
+lines(weight.seq, mu.mean)
+
+#Draw HPDI region for line
+shade(mu.HPDI, weight.seq)
+
+#Draw PI region for simulated heights
+shade(height.PI, weight.seq)
+
+@
+
+\item The rate of height increase in relation to weight does not appear to be constant. Thus, the data may be better modeled by a quadratic or cubic function.
+\end{enumerate}
+
+\begin{problem}{4H3}
+\text{}\\
+Suppose a colleague of yours, who works on allometry, glances at the practice problems just above. Your colleage exclaims, "That's silly. Everyone knows that it's only the \textit{logarithm} of body weight that scales with height!" Let's take your colleague's advice and see what happens.
+\begin{enumerate}[(a)]
+\item Model the relationship between height (cm) and the natural logarithm of weight (log-kg). Use the entire Howell1 data frame, all 544 rows, adults and non-adults. Fit this model using quadratic approximation:
+\begin{center}
+h\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$log(x\textsubscript{i})\\
+$\alpha$ $\sim$ Normal(178, 100)\\
+$\beta$ $\sim$ Normal(0, 100)\\
+$\sigma$ $\sim$ Uniform(0, 50)
+\end{center}
+where h\textsubscript{i} is the height of individual \textit{i} and w\textsubscript{i} is the weight (in kg) of individual \textit{i}. The function for computing a natural log in R is just log. Can you interpret the resulting estimates?
+\item Begin with this plot:
+
+<<warning=FALSE, message=FALSE, results='hide', fig.keep='none'>>=
+
+plot(height ~ weight, data = Howell1, col = col.alpha(rangi2,0.4))
+
+@
+
+Then use samples from the quadratic approximate posterior of the model in (a) to superimpose on the plot: (1) the predicted mean height as a function of weight, (2) the 97\% HPDI for the mean, (3) the 97\% HPDI for predicted heights.
+\end{enumerate}
+\end{problem}
+
+\begin{enumerate}[(a)]
+\item
+
+<<warning=FALSE, message=FALSE>>=
+
+Howell1$weight.log <- log(Howell1$weight)
+
+m3 <- map(
+  alist(
+    height ~ dnorm(a + b*weight.log, sigma),
+    a ~ dnorm(178, 100),
+    b ~ dnorm(0, 100),
+    sigma ~ dunif(0, 50)
+  ), data = Howell1)
+
+print(m3)
+
+@
+
+For every one unit increase in log-kg, height increases by about 47 cm. The intercept a is negative and thus is uninterpretable. This arises because log(0) is undefined and $\log(x) \to -\infty$ as $x \to 0$.
+
+\item
+
+<<warning=FALSE, message=FALSE>>=
+
+plot(height ~ weight, data = Howell1, col = col.alpha(rangi2,0.4))
+
+#Define sequence of weights to compute predictions for
+#These values will be on the horizontal axis
+weight.seq <- seq(from = 1, to = 70, by = 1)
+
+#Use link to compute mu for each sample from the posterior
+#and for each weight in weight.seq
+post <- extract.samples(m3)
+mu.link <- function(weight) post$a + post$b*log(weight)
+mu <- sapply(weight.seq, mu.link)
+
+#Summarize the distribution of mu
+mu.mean <- apply(mu, 2, mean)
+mu.HPDI <- apply(mu, 2, HPDI, prob = 0.97)
+
+#Simulate heights from the posterior
+sim.height <- sim(m3, data=list(weight.log=log(weight.seq)))
+
+#Summarize the simulated heights
+height.PI <- apply(sim.height, 2, PI, prob=0.97)
+
+#Draw MAP line
+lines(weight.seq, mu.mean)
+
+#Draw HPDI region for line
+shade(mu.HPDI, weight.seq)
+
+#Draw PI region for simulated heights
+shade(height.PI, weight.seq)
+
+@
+
+
+\end{enumerate}
 
 \end{document}

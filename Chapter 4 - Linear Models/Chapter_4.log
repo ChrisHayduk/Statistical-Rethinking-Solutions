@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  2 JAN 2019 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  3 JAN 2019 22:07
 entering extended mode
 **./Chapter_4.tex
 (Chapter_4.tex
@@ -276,6 +276,15 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 
 Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 )
+("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
+sty"
+Package: enumitem 2018/11/30 v3.6 Customized lists
+\labelindent=\skip54
+\enit@outerparindent=\dimen135
+\enit@toks=\toks27
+\enit@inbox=\box28
+\enitdp@description=\count107
+)
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\upquote\upquote.st
 y"
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -439,26 +448,26 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )) (Chapter_4.aux)
 \openout1 = `Chapter_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 78.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 79.
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -466,17 +475,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen135
-\scratchbox=\box28
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen136
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count108
+\scratchdimen=\dimen136
+\scratchbox=\box29
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen137
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks29
 )
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -570,52 +579,52 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 86.
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 85.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 86.
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 86.
 
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 85.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 86.
 
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 85.
+(Font)              <14.4> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 85.
+(Font)              <10> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 85.
-LaTeX Font Info:    Try loading font information for U+msa on input line 85.
+(Font)              <7> on input line 86.
+LaTeX Font Info:    Try loading font information for U+msa on input line 86.
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 85.
+LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 96.
+(Font)              <12> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 96.
+(Font)              <8> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 96.
+(Font)              <6> on input line 97.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 Pr($\mu$, $\sigma$\vert
+l.117 Pr($\mu$, $\sigma$\vert
                              $y) = \textfrac{$\Pi$\textsubscript{i}Normal(y\...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -623,7 +632,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -631,7 +640,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -639,7 +648,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -647,7 +656,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -655,7 +664,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -663,7 +672,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -671,7 +680,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -679,7 +688,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -687,7 +696,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -695,7 +704,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -703,7 +712,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -711,7 +720,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -719,7 +728,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -727,7 +736,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -735,7 +744,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -743,7 +752,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -751,7 +760,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -759,7 +768,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -767,7 +776,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -775,7 +784,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -783,7 +792,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -791,7 +800,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -799,7 +808,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -807,7 +816,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -815,7 +824,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -823,7 +832,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -831,7 +840,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -839,7 +848,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -847,7 +856,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -855,7 +864,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -863,7 +872,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -871,7 +880,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -879,7 +888,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -887,7 +896,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -895,7 +904,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -903,7 +912,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -911,7 +920,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -919,7 +928,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \@genfrac ...egingroup #4\endgroup #2#3\relax #5}}
                                                   
-l.116 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
+l.117 ..., 10) $\textit{d}$\mu$\textit{d}$\sigma$}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -930,7 +939,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.117 
+l.118 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -938,60 +947,134 @@ you left one out. Proceed, with fingers crossed.
 [1
 
 {C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package color Info: Redefining color shadecolor on input line 152.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 153.
+Package color Info: Redefining color shadecolor on input line 153.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 154.
 
 
 ("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 154.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 155.
 <figure/unnamed-chunk-2-1.pdf, id=14, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 160.
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 161.
 (pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 160--161
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 161--162
 [][] 
  []
 
 [2]
-Package color Info: Redefining color shadecolor on input line 170.
-Package color Info: Redefining color shadecolor on input line 186.
- [3 <./figure/unnamed-chunk-2-1.pdf>] [4] [5] (Chapter_4.aux) )
+Package color Info: Redefining color shadecolor on input line 171.
+Package color Info: Redefining color shadecolor on input line 187.
+ [3 <./figure/unnamed-chunk-2-1.pdf>] [4]
+Package color Info: Redefining color shadecolor on input line 260.
+ [5]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.340 \begin
+            {enumerate}[(a)]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Package color Info: Redefining color shadecolor on input line 344.
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 357
+.
+("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmtt.fd"
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[6]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.389 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.389 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.389 
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Package color Info: Redefining color shadecolor on input line 393.
+[7]
+<figure/unnamed-chunk-7-1.pdf, id=43, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 442.
+(pdftex.def)             Requested size: 440.38033pt x 440.3909pt.
+ [8] [9 <./figure/unnamed-chunk-7-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 465.
+Package color Info: Redefining color shadecolor on input line 480.
+ [10]
+Package color Info: Redefining color shadecolor on input line 518.
+ [11]
+<figure/unnamed-chunk-10-1.pdf, id=65, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-10-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-10-1.pdf  used on input line 566.
+
+(pdftex.def)             Requested size: 440.38033pt x 440.3909pt.
+ [12 <./figure/unnamed-chunk-10-1.pdf>] (Chapter_4.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 116 ({)
+### simple group (level 1) entered at line 117 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4522 strings out of 492970
- 66348 string characters out of 3126593
- 132198 words of memory out of 3000000
- 8266 multiletter control sequences out of 15000+200000
- 77693 words of font info for 67 fonts, out of 3000000 for 9000
+ 4885 strings out of 492970
+ 72762 string characters out of 3126593
+ 143185 words of memory out of 3000000
+ 8618 multiletter control sequences out of 15000+200000
+ 78318 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,32p,367b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,9n,32p,367b,447s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
 ps/lm/lm-ec.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
-ps/lm/lm-mathex.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-rm.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathit.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-mathsy.enc}<C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmbx12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Chris/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Chris/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Chris/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Chris/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Chris/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Chris/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Chris/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Chris/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Chapter_4.pdf (5 pages, 190794 bytes).
+ps/lm/lm-ts1.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
+ips/lm/lm-mathex.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-rm.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-mathit.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/font
+s/enc/dvips/lm/lm-mathsy.enc}<C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmbx12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Chris/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Chris/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Chris/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Chris/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Chris/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Chris/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Chris/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Chris/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Chri
+s/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Chapter_4.pdf (12 pages, 290792 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
