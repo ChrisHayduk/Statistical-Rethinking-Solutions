@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Statistical Rethinking: Chapter 5 - Multivariate Linear Models}
+
+\author{Chris Hayduk}
+\date{\today}
+
+\maketitle
+
+
+<<echo=F, results = 'hide', warning=FALSE, message=FALSE>>=
+# set the global chunk options
+opts_chunk$set(message=FALSE, # don't print R messages in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+               warning=FALSE) # don't print warnings in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+
+# load .RData files, .R files, etc.
+# R packages required
+suppressMessages(library(xtable, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
+suppressMessages(library(tidyverse, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+suppressMessages(library(rethinking, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+@
+
+\section{Easy}
+
+\begin{problem}{5E1}
+\text{ }\\
+Which of the linear models below are multiple linear regressions?
+\begin{enumerate}
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$x\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\beta$\textsubscript{x}x\textsubscript{i} + $\beta$\textsubscript{z}z\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$(x\textsubscript{i} - z\textsubscript{i})
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{x}x\textsubscript{i} + $\beta$\textsubscript{z}z\textsubscript{i}
+\end{enumerate}
+\end{problem}
+
+Linear models 2 and 4 are multiple linear regressions.
+
+\begin{problem}{5E2}
+\text{ }\\
+Write down a multiple regression to evaluate the claim: \textit{Animal diversity is linearly related to latitude, but only after controlling for plant diversity.} You just need to write down the model definition.
+\end{problem}
+
+\begin{center}
+animal diversity\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\beta$\textsubscript{latitude}latitude\textsubscript{i} + $\beta$\textsubscript{diversity}diversity\textsubscript{i}\\
+$\beta$\textsubscript{latitude} $\sim$ Normal(0, 10)\\
+$\beta$\textsubscript{diversity} $\sim$ Normal(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 10)
+\end{center}
+
+\begin{problem}{5E3}
+\text{ }\\
+Write down a multiple regression to evaluate the claim: \textit{Neither amount of funding nor size of laboratory is by itself a good predictor of time to PhD degree; but together these variables are both positively associated with time to degree.} Write down the model definition and indicate which side of zero each slope parameter should be on.
+\end{problem}
+
+\begin{center}
+time\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\beta$\textsubscript{lab size}lab size\textsubscript{i} + $\beta$\textsubscript{funding}funding\textsubscript{i}\\
+$\beta$\textsubscript{lab size} $\sim$ Normal(0, 10)\\
+$\beta$\textsubscript{funding} $\sim$ Normal(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 10)
+\end{center}
+
+Both parameters should have slopes greater than zero since the problem specifies that "together the variables are both positively associated with time to degree".
+
+\begin{problem}{5E4}
+\text{ }\\
+Suppose you have a single categorical predictor with 4 levels (unique values), labeled A, B, C, and D. Let A\textsubscript{i} be an indicator variable that is 1 where case \textit{i} is in category A. Also suppose B\textsubscript{i}, C\textsubscript{i}, and D\textsubscript{i} for the other categories. Now which of the following linear models are inferentially equivalent ways to include the categorical variable in a regression? Models are inferentially equivalent when it's possible to compute one posterior distribution from the posterior distribution of another model.
+\begin{enumerate}
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{A}A\textsubscript{i} + $\beta$\textsubscript{B}B\textsubscript{i} + $\beta$\textsubscript{D}D\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{A}A\textsubscript{i} + $\beta$\textsubscript{B}B\textsubscript{i} + $\beta$\textsubscript{C}C\textsubscript{i} + $\beta$\textsubscript{D}D\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{B}B\textsubscript{i} + $\beta$\textsubscript{C}C\textsubscript{i} + $\beta$\textsubscript{D}D\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\alpha$\textsubscript{A}A\textsubscript{i} + $\alpha$\textsubscript{B}B\textsubscript{i} + $\alpha$\textsubscript{C}C\textsubscript{i} + $\alpha$\textsubscript{D}D\textsubscript{i}
+	\item $\mu$\textsubscript{i} = $\alpha$\textsubscript{i}(1 - B\textsubscript{i} - C\textsubscript{i} - D\textsubscript{i}) + $\alpha$\textsubscript{B}B\textsubscript{i} + $\alpha$\textsubscript{C}C\textsubscript{i} + $\alpha$\textsubscript{D}D\textsubscript{i}
+\end{enumerate}
+\end{problem}
+
+Models 1, 3, 4, and 5 are all inferentially equivalent.
+
+\section{Medium}
+
+\end{document}
