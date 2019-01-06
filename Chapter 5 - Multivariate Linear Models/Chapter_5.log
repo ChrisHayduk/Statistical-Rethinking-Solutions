@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  6 JAN 2019 01:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.28)  6 JAN 2019 16:02
 entering extended mode
 **./Chapter_5.tex
 (Chapter_5.tex
@@ -623,30 +623,64 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 97.
 [1
 
-{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(Chapter_5.aux) ) 
+{C:/Users/Chris/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Package color Info: Redefining color shadecolor on input line 156.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 157.
+
+
+("C:\Users\Chris\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 159.
+<figure/unnamed-chunk-2-1.pdf, id=12, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 167.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 167--168
+[][] 
+ []
+
+[2] [3 <./figure/unnamed-chunk-2-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 187.
+<figure/unnamed-chunk-3-1.pdf, id=26, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 200.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 200--201
+[][] 
+ []
+
+[4] [5 <./figure/unnamed-chunk-3-1.pdf>] [6] (Chapter_5.aux) ) 
 Here is how much of TeX's memory you used:
- 4767 strings out of 492970
- 70679 string characters out of 3126593
- 138185 words of memory out of 3000000
- 8523 multiletter control sequences out of 15000+200000
- 54289 words of font info for 55 fonts, out of 3000000 for 9000
+ 4821 strings out of 492970
+ 71749 string characters out of 3126593
+ 139185 words of memory out of 3000000
+ 8569 multiletter control sequences out of 15000+200000
+ 54925 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,6n,32p,606b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/lm/lm-ec.enc}{C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/lm/lm-mathit.enc}<C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/lm/lmbx12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmmi12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Chris/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Chris/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/Chris/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Chapter_5.pdf (2 pages, 137557 bytes).
+{C:/Users/Chris/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Chris/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Chr
+is/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}<C:/Users
+/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/U
+sers/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><
+C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pf
+b><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17
+.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
+r8.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmri12.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/lm/lmsy10.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmtk10.pfb><C:/Users/Chris/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmtt12.pfb>
+Output written on Chapter_5.pdf (6 pages, 7013970 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -147,4 +147,75 @@ Models 1, 3, 4, and 5 are all inferentially equivalent.
 
 \section{Medium}
 
+\begin{problem}{5M1}
+\text{ }\\
+Invent your own example of a spurious correlation. An outcome variable should be correlated with both predictor variables. But when both predictors are entered in the same model, the correlation between the outcome and one of the predictors should mostly vanish (or at least be greatly reduced).
+\end{problem}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{N} \hlkwb{<-} \hlnum{1e4}
+\hlstd{x.real} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n} \hlstd{= N,} \hlkwc{mean} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlnum{1}\hlstd{)}
+\hlstd{x.spurious} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n} \hlstd{= N,} \hlkwc{mean} \hlstd{= x.real)}
+\hlstd{y} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n} \hlstd{= N,} \hlkwc{mean} \hlstd{= x.real)}
+
+\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{y} \hlstd{= y,} \hlkwc{x.real} \hlstd{= x.real,} \hlkwc{x.spurious} \hlstd{= x.spurious)}
+\hlkwd{pairs}\hlstd{(df)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{model} \hlkwb{<-} \hlkwd{lm}\hlstd{(y} \hlopt{~} \hlstd{x.real} \hlopt{+} \hlstd{x.spurious)}
+\hlkwd{precis}\hlstd{(model)}
+\end{alltt}
+\begin{verbatim}
+##              Mean StdDev  5.5% 94.5%
+## (Intercept)  0.02   0.01 -0.01  0.04
+## x.real       1.01   0.01  0.99  1.03
+## x.spurious  -0.01   0.01 -0.03  0.01
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{problem}{5M2}
+\text{ }\\
+Invent your own example of a masked relationship. An outcome variable should be correlated with both predictor variables, but in opposite directions. And the two predictor variables should be correlated with one another.
+\end{problem}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{N} \hlkwb{<-} \hlnum{1e4}
+\hlstd{rho} \hlkwb{<-} \hlnum{0.7}
+
+\hlstd{x.pos} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(N)}
+\hlstd{x.neg} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(N, rho}\hlopt{*}\hlstd{x.pos,} \hlkwd{sqrt}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{rho}\hlopt{^}\hlnum{2}\hlstd{))}
+\hlstd{y} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(N, x.pos} \hlopt{-} \hlstd{x.neg)}
+
+\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{y} \hlstd{= y,} \hlkwc{x.pos} \hlstd{= x.pos,} \hlkwc{x.neg} \hlstd{= x.neg)}
+\hlkwd{pairs}\hlstd{(df)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{model} \hlkwb{<-} \hlkwd{lm}\hlstd{(y} \hlopt{~} \hlstd{x.pos} \hlopt{+} \hlstd{x.neg)}
+\hlkwd{precis}\hlstd{(model)}
+\end{alltt}
+\begin{verbatim}
+##              Mean StdDev  5.5% 94.5%
+## (Intercept)  0.00   0.01 -0.02  0.01
+## x.pos        0.99   0.01  0.97  1.01
+## x.neg       -1.00   0.01 -1.02 -0.98
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{problem}{5M3}
+\text{ }\\
+It is sometimes observed that the best predictor of fire risk is the presence of firefighters - States and localities with many firefighters also have more fires. Presumably firefightes do not \textit{cause} fires. Nevertheless, this is not a spurious correlation. Instead fires cause firefighters. Consider the same reversal of causal inference in the context of the divorice and marriage data. How might a high divorce rate cause a higher marriage rate? Can you think of a way to evaluate this relationship, using multiple regression?
+\end{problem}
+
+
+
 \end{document}
