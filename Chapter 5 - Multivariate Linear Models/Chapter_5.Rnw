@@ -154,6 +154,11 @@ precis(model)
 It is sometimes observed that the best predictor of fire risk is the presence of firefighters - States and localities with many firefighters also have more fires. Presumably firefightes do not \textit{cause} fires. Nevertheless, this is not a spurious correlation. Instead fires cause firefighters. Consider the same reversal of causal inference in the context of the divorice and marriage data. How might a high divorce rate cause a higher marriage rate? Can you think of a way to evaluate this relationship, using multiple regression?
 \end{problem}
 
+A high divorce rate may cause a higher marriage rate because people who are divorced may get married multiple times throughout their lives.
 
+\begin{problem}{5M4}
+\text{ }\\
+In the divorce data, States with high numbers of Mormons have much lower divorce rates than the regression models expected. Find a list of LDS population by State and use those numbers as a predictor variable, predicting divorce rate using marriage rate, median age at marriage, and percent LDS population (possibly standardized). You may want to consider transformations of the raw percent LDS variable.
+\end{problem}
 
 \end{document}
