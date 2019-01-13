@@ -61,7 +61,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
- 
+
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
@@ -171,9 +171,9 @@ Invent your own example of a spurious correlation. An outcome variable should be
 \end{alltt}
 \begin{verbatim}
 ##              Mean StdDev  5.5% 94.5%
-## (Intercept)  0.02   0.01 -0.01  0.04
-## x.real       1.01   0.01  0.99  1.03
-## x.spurious  -0.01   0.01 -0.03  0.01
+## (Intercept)  0.01   0.01 -0.01  0.04
+## x.real       0.99   0.01  0.97  1.01
+## x.spurious  -0.01   0.01 -0.02  0.01
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -204,9 +204,9 @@ Invent your own example of a masked relationship. An outcome variable should be 
 \end{alltt}
 \begin{verbatim}
 ##              Mean StdDev  5.5% 94.5%
-## (Intercept)  0.00   0.01 -0.02  0.01
-## x.pos        0.99   0.01  0.97  1.01
-## x.neg       -1.00   0.01 -1.02 -0.98
+## (Intercept)  0.00   0.01 -0.02  0.02
+## x.pos        1.04   0.01  1.02  1.06
+## x.neg       -1.01   0.01 -1.03 -0.99
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -216,6 +216,11 @@ Invent your own example of a masked relationship. An outcome variable should be 
 It is sometimes observed that the best predictor of fire risk is the presence of firefighters - States and localities with many firefighters also have more fires. Presumably firefightes do not \textit{cause} fires. Nevertheless, this is not a spurious correlation. Instead fires cause firefighters. Consider the same reversal of causal inference in the context of the divorice and marriage data. How might a high divorce rate cause a higher marriage rate? Can you think of a way to evaluate this relationship, using multiple regression?
 \end{problem}
 
+A high divorce rate may cause a higher marriage rate because people who are divorced may get married multiple times throughout their lives.
 
+\begin{problem}{5M4}
+\text{ }\\
+In the divorce data, States with high numbers of Mormons have much lower divorce rates than the regression models expected. Find a list of LDS population by State and use those numbers as a predictor variable, predicting divorce rate using marriage rate, median age at marriage, and percent LDS population (possibly standardized). You may want to consider transformations of the raw percent LDS variable.
+\end{problem}
 
 \end{document}
