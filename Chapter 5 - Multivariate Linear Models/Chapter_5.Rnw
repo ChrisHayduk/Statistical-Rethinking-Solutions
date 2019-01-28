@@ -43,7 +43,7 @@ opts_chunk$set(message=FALSE, # don't print R messages in pdf -- CHANGE TO FALSE
 
 # load .RData files, .R files, etc.
 # R packages required
-suppressMessages(library(xtable, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
+suppressMessages(library(readxl, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
 suppressMessages(library(tidyverse, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
 suppressMessages(library(rethinking, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
 @
@@ -160,5 +160,281 @@ A high divorce rate may cause a higher marriage rate because people who are divo
 \text{ }\\
 In the divorce data, States with high numbers of Mormons have much lower divorce rates than the regression models expected. Find a list of LDS population by State and use those numbers as a predictor variable, predicting divorce rate using marriage rate, median age at marriage, and percent LDS population (possibly standardized). You may want to consider transformations of the raw percent LDS variable.
 \end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+mormon <- read_excel("Mormon.xlsx")
+
+data(WaffleDivorce)
+
+d <- WaffleDivorce
+
+names(mormon) <- c("Location", "MormonPop", "StatePop", "PercMormon")
+
+mormon <- mormon[,c("Location", "MormonPop", "PercMormon")]
+
+d <- left_join(d, mormon)
+
+d$MedianAgeMarriage.s <- (d$MedianAgeMarriage - mean(d$MedianAgeMarriage))/sd(d$MedianAgeMarriage)
+
+d$Marriage.s <- (d$Marriage - mean(d$Marriage))/sd(d$Marriage)
+
+d$PercMormon.s <- (d$PercMormon - mean(d$PercMormon))/sd(d$PercMormon)
+
+model <- map(
+  alist(
+    Divorce ~ dnorm(mu, sigma),
+    mu <- a + b1 * Marriage.s + + b2 * MedianAgeMarriage.s + b3 * PercMormon.s,
+    a ~ dnorm(10, 10),
+    b1 ~ dnorm(0, 1),
+    b2 ~ dnorm(0, 1),
+    b3 ~ dnorm(0, 1),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+precis(model)
+
+plot(precis(model))
+
+@
+
+\begin{problem}{5M5}
+\text{ }\\
+One way to reason through multiple causation hypotheses is to imagine detailed mechanisms through which predictor variables may influence outcomes. For example, it is sometimes argued that the price of gasoline (predictor variable) is positiviely associated with lower obesity rates (outcome variable). However, there are at least two important mechanisms by which the price of gas could reduce obesity. First, it could lead to less driving and therefore more exercise. Second, it could lead to less driving, which leads to less eating out, which leads to less consumption of huge restaurant meals. Can you outline one or more multiple regressions that address these two mechanisms? Assume you can have any predictor data you need.
+\end{problem}
+
+Model 1:
+\begin{center}
+obesity rate\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\beta$\textsubscript{gas}gas price\textsubscript{i} + $\beta$\textsubscript{driving}hours driving per year per capita\textsubscript{i}\\
+$\beta$\textsubscript{gas} $\sim$ Normal(0, 10)\\
+$\beta$\textsubscript{driving} $\sim$ Normal(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 10)
+\end{center}
+
+Model 2:
+\begin{center}
+obesity rate\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\beta$\textsubscript{gas}gas price\textsubscript{i} + $\beta$\textsubscript{restaurant}restaurant trips per year per capita\textsubscript{i}\\
+$\beta$\textsubscript{gas} $\sim$ Normal(0, 10)\\
+$\beta$\textsubscript{restaurant} $\sim$ Normal(0, 10)\\
+$\sigma$ $\sim$ Uniform(0, 10)
+\end{center}
+
+\section{Hard}
+
+All three exercises below use the same data, data(foxes) (part of rethinking). The urban fox (\textit{Vulpes vulpes}) is a successful exploiter of human habitat. Since urbran foxes move in packs and defend territories, data on haitat quality and population density is also included. The data frame has fix columns:
+\begin{enumerate}
+	\item group: Number of the social group the individual fox belongs to
+	\item avgfood: The average amount of food available in the territory
+	\item groupsize: The number of foxes in the social group
+	\item area: Size of the territory
+	\item weight: Body weight of the individual fox
+\end{enumerate}
+
+\begin{problem}{5H1}
+\text{ }\\
+Fit two bivariate Gaussian regressions, using map: (1) body weight as a linear function of territory size (area), and (2) body weight as a linear function of groupsize. Plot the results of these regressions, displaying the MAP regression line and 95\% interval of the mean. Is either variable important for predicting fox body weight?
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+data(foxes)
+
+d <- foxes
+
+model1 <- map(
+  alist(
+    weight ~ dnorm(mu, sigma),
+    mu <- a + b * area,
+    a ~ dnorm(10, 10),
+    b ~ dnorm(0, 100),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+model2 <- map(
+  alist(
+    weight ~ dnorm(mu, sigma),
+    mu <- a + b * groupsize,
+    a ~ dnorm(10, 10),
+    b ~ dnorm(0, 100),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+area.seq <- seq(from = round(min(d$area), 1), to = round(max(d$area),1), length.out = 100)
+
+groupsize.seq <- seq(from = round(min(d$groupsize), 1), to = round(max(d$groupsize),1), length.out = 100)
+
+mu1 <- link(model1, data = data.frame(area=area.seq))
+mu1.PI <- apply(mu1, 2, PI, 0.95)
+
+mu2 <- link(model2, data = data.frame(groupsize = groupsize.seq))
+mu2.PI <- apply(mu2, 2, PI, 0.95)
+
+par(mfrow=c(1,2))
+
+plot(weight ~ area, data = d, col=rangi2)
+abline(model1)
+shade(mu1.PI, area.seq)
+
+plot(weight ~ groupsize, data = d, col = rangi2)
+abline(model2)
+shade(mu2.PI, groupsize.seq)
+
+
+@
+
+Neither predictor appears to be heavily associated with weight, although group size does slightly better than area.
+
+\begin{problem}{5H2}
+\text{ }\\
+Now fit a multiple linear regression with weight as the outcome and both area and groupsize as predictor variables. Plot the predictions of the model for each predictor, holding the other predictor constant at its mean. What does this model say about the importance of each variable? Why do you get different results than you got in the exercise above?
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+model3 <- map(
+  alist(
+    weight ~ dnorm(mu, sigma),
+    mu <- a + b1 * area + b2 * groupsize,
+    a ~ dnorm(10, 10),
+    b1 ~ dnorm(0, 100),
+    b2 ~ dnorm(0, 100),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+precis(model3)
+
+A.avg <- mean(d$area)
+G.avg <- mean(d$groupsize)
+
+pred.data1 <-data.frame(area = area.seq, groupsize = G.avg)
+pred.data2 <- data.frame(area = A.avg, groupsize = groupsize.seq)
+
+mu1 <- link(model3, data = pred.data1)
+mu1.mean <- apply(mu1, 2, mean)
+mu1.PI <- apply(mu1, 2, PI, 0.95)
+
+mu2 <- link(model3, data = pred.data2)
+mu2.mean <- apply(mu2, 2, mean)
+mu2.PI <- apply(mu2, 2, PI, 0.95)
+
+A.sim <- sim(model3, data = pred.data1, n = 1e4)
+G.sim <- sim(model3, data = pred.data2, n = 1e4)
+
+A.PI <- apply(A.sim, 2, PI, 0.95)
+G.PI <- apply(G.sim, 2, PI, 0.95)
+
+par(mfrow=c(1,2))
+
+plot(weight ~ area, data = d, type = "n")
+mtext("Group Size = mean(Group Size)")
+lines(area.seq, mu1.mean)
+shade(mu1.PI, area.seq)
+shade(A.PI, area.seq)
+
+plot(weight ~ groupsize, data = d, type = "n")
+mtext("Area = mean(Area)")
+lines(groupsize.seq, mu2.mean)
+shade(mu2.PI, groupsize.seq)
+shade(G.PI, groupsize.seq)
+
+@
+
+In each plot, the darker shaded region shows 95\% percentile intervals of the means, and the lighter shaded region shows 95\% prediction intervals.
+
+When holding each variable constant at its mean, we can see that the other variable has a strong correlation with weight. In the case where area varies while group size remains constant, the correlation is strongly positive. In the opposite case, the correlation is strongly negative. The 95\% percentile intervals of the means demonstrate that a horizontal line is not included in the interval, again demonstrating that the relationship for each variable is important.
+
+\begin{problem}{5H3}
+\text{ }\\
+Finally, consider the avgfood variable. Fit two more multiple regressions: (1) body weight as an additive function of avgfood and groupsize, and (2) body weight as an additive function of all three variables, avgfood and groupsize and area. Compare the results of these models to the previous models you've fit, in the first two exercises. (a) Is avgfood or area a better predictor of body weight? If you had to choose one or the other to include in a model, which would it be? Support your assessment with any tables or plots you choose. (b) When both avgfood or area are in the same model, their effects are reduced (closer to zero) and their standard errors are larger than when they are included in separate models. Can you explain this result?
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+model4 <- map(
+  alist(
+    weight ~ dnorm(mu, sigma),
+    mu <- a + b1 * avgfood + b2 * groupsize,
+    a ~ dnorm(10, 10),
+    b1 ~ dnorm(0, 100),
+    b2 ~ dnorm(0, 100),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+precis(model4)
+
+plot(precis(model4))
+
+model5 <- map(
+  alist(
+    weight ~ dnorm(mu, sigma),
+     mu <- a + b1 * avgfood + b2 * groupsize + b3 * area,
+    a ~ dnorm(10, 10),
+    b1 ~ dnorm(0, 100),
+    b2 ~ dnorm(0, 100),
+    b3 ~ dnorm(0, 100),
+    sigma ~ dunif(0, 10)
+  ), data = d)
+
+precis(model5)
+
+plot(precis(model5))
+
+@
+
+a) Let's compare avgfood and area:
+
+<<warning=FALSE, message=FALSE>>=
+
+avgfood.seq <- seq(from = round(min(d$avgfood), 1), to = round(max(d$avgfood),1), length.out = 100)
+
+pred.data3 <-data.frame(avgfood = avgfood.seq, groupsize = G.avg)
+
+mu3 <- link(model4, data = pred.data3)
+mu3.mean <- apply(mu3, 2, mean)
+mu3.PI <- apply(mu3, 2, PI, 0.95)
+
+F.sim <- sim(model4, data = pred.data3, n = 1e4)
+F.PI <- apply(F.sim, 2, PI, 0.95)
+
+par(mfrow=c(1,2))
+
+plot(weight ~ area, data = d, type = "n")
+mtext("Area w/ Group Size = mean(Group Size)")
+lines(area.seq, mu1.mean)
+shade(mu1.PI, area.seq)
+shade(A.PI, area.seq)
+
+plot(weight ~ avgfood, data = d, type = "n")
+mtext("Avgfood w/ Group Size = mean(Group Size)")
+lines(avgfood.seq, mu3.mean)
+shade(mu3.PI, avgfood.seq)
+shade(F.PI, avgfood.seq)
+
+@
+
+Holding group size constant at its mean, it appears that avgfood has a slightly more positive correlation with weight than area does. As a result, we should use avgfood in place of area.
+
+b) This occurs due to the presence of multicollinearity in our predictors, which we will demonstrate below:
+
+<<warning=FALSE, message=FALSE>>=
+
+print(cor(d$avgfood, d$area))
+
+@
+
+We can see that the variables avgfood and area are highly positively correlated. Now to show that the posterior distributions for their coefficients are highly correlated as well:
+
+<<warning=FALSE, message=FALSE>>=
+post <- extract.samples(model5)
+names(post) <- c("intercept", "avgfood_coeff", "groupsize coeff", "area_coeff", "sigma")
+plot(avgfood_coeff ~ area_coeff, post, col=col.alpha(rangi2, 0.1), pch = 16)
+
+@
+
+We can see that the two coefficients are highly negatively correlated. From the correlation of the variables and coefficients, we can see that both variables contain nearly the same information. Thus, only one should be included in the model.
 
 \end{document}

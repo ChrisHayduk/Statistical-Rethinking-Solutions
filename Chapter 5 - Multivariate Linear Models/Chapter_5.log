@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.13)  13 JAN 2019 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.13)  27 JAN 2019 19:52
 entering extended mode
 **./Chapter_5.tex
 (Chapter_5.tex
@@ -616,29 +616,174 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 200--201
 [][] 
  []
 
-[4] [5 <./figure/unnamed-chunk-3-1.pdf>] [6] (Chapter_5.aux) ) 
+[4] [5 <./figure/unnamed-chunk-3-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 227.
+
+Overfull \hbox (136.14519pt too wide) in paragraph at lines 246--246
+[][]\T1/lmtt/m/n/12 d[][]$[][]MedianAgeMarriage.s[] []<-[] [](d[][]$[][]MedianA
+geMarriage[] []-[] []\T1/lmtt/b/n/12 mean[][]\T1/lmtt/m/n/12 (d[][]$[][]MedianA
+geMarriage))[][]/[][]\T1/lmtt/b/n/12 sd[][]\T1/lmtt/m/n/12 (d[][]$[][]MedianAge
+Marriage)[][] 
+ []
+
+
+Overfull \hbox (18.07022pt too wide) in paragraph at lines 255--255
+[]    []\T1/lmtt/m/n/12 mu[] []<-[] []a[] []+[] []b1[] []*[] []Marriage.s[] []+
+ +[] []b2[] []*[] []MedianAgeMarriage.s[] []+[] []b3[] []*[] []PercMormon.s,[][
+] 
+ []
+
+[6]
+<figure/unnamed-chunk-4-1.pdf, id=41, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 277.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 277--278
+[][] 
+ []
+
+[7] [8 <./figure/unnamed-chunk-4-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 321.
+
+Overfull \hbox (88.36996pt too wide) in paragraph at lines 345--345
+[][]\T1/lmtt/m/n/12 area.seq[] []<-[] []\T1/lmtt/b/n/12 seq[][]\T1/lmtt/m/n/12 
+([][]from[] []=[] []\T1/lmtt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt/b/n/
+12 min[][]\T1/lmtt/m/n/12 (d[][]$[][]area),[] []1[][]),[] []to[] []=[] []\T1/lm
+tt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt/b/n/12 max[][]\T1/lmtt/m/n/12 
+(d[][]$[][]area),[][]1[][]),[] []length.out[] []=[] []100[][])[][] 
+ []
+
+
+Overfull \hbox (180.99501pt too wide) in paragraph at lines 347--347
+[][]\T1/lmtt/m/n/12 groupsize.seq[] []<-[] []\T1/lmtt/b/n/12 seq[][]\T1/lmtt/m/
+n/12 ([][]from[] []=[] []\T1/lmtt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt
+/b/n/12 min[][]\T1/lmtt/m/n/12 (d[][]$[][]groupsize),[] []1[][]),[] []to[] []=[
+] []\T1/lmtt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt/b/n/12 max[][]\T1/lm
+tt/m/n/12 (d[][]$[][]groupsize),[][]1[][]),[] []length.out[] []=[] []100[][])[]
+[] 
+ []
+
+[9] [10]
+<figure/unnamed-chunk-5-1.pdf, id=61, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 396.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 396--397
+[][] 
+ []
+
+[11 <./figure/unnamed-chunk-5-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 408.
+ [12] [13]
+<figure/unnamed-chunk-6-1.pdf, id=80, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-6-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 524.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 524--525
+[][] 
+ []
+
+[14] [15 <./figure/unnamed-chunk-6-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 538.
+<figure/unnamed-chunk-7-1.pdf, id=95, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 563.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 563--564
+[][] 
+ []
+
+[16] [17 <./figure/unnamed-chunk-7-1.pdf>]
+<figure/unnamed-chunk-7-2.pdf, id=108, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-7-2.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-7-2.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-7-2.pdf  used on input line 590.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 590--591
+[][] 
+ []
+
+Package color Info: Redefining color shadecolor on input line 597.
+[18 <./figure/unnamed-chunk-7-2.pdf>]
+Overfull \hbox (143.94499pt too wide) in paragraph at lines 599--599
+[][]\T1/lmtt/m/n/12 avgfood.seq[] []<-[] []\T1/lmtt/b/n/12 seq[][]\T1/lmtt/m/n/
+12 ([][]from[] []=[] []\T1/lmtt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt/b
+/n/12 min[][]\T1/lmtt/m/n/12 (d[][]$[][]avgfood),[] []1[][]),[] []to[] []=[] []
+\T1/lmtt/b/n/12 round[][]\T1/lmtt/m/n/12 ([][]\T1/lmtt/b/n/12 max[][]\T1/lmtt/m
+/n/12 (d[][]$[][]avgfood),[][]1[][]),[] []length.out[] []=[] []100[][])[][] 
+ []
+
+[19]
+<figure/unnamed-chunk-8-1.pdf, id=122, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 655.
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 655--656
+[][] 
+ []
+
+Package color Info: Redefining color shadecolor on input line 664.
+[20 <./figure/unnamed-chunk-8-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 677.
+
+Overfull \hbox (74.39516pt too wide) in paragraph at lines 680--680
+[][]\T1/lmtt/b/n/12 names[][]\T1/lmtt/m/n/12 (post)[] []<-[] []\T1/lmtt/b/n/12 
+c[][]\T1/lmtt/m/n/12 ([][]"intercept"[][],[] []"avgfood_coeff"[][],[] []"groups
+ize coeff"[][],[] []"area_coeff"[][],[] []"sigma"[][])[][] 
+ []
+
+
+Overfull \hbox (1.16301pt too wide) in paragraph at lines 681--681
+[][]\T1/lmtt/b/n/12 plot[][]\T1/lmtt/m/n/12 (avgfood_coeff[] []~[] []area_coeff
+, post,[] []col[][]=[][]\T1/lmtt/b/n/12 col.alpha[][]\T1/lmtt/m/n/12 (rangi2,[]
+ []0.1[][]),[] []pch[] []=[] []16[][])[][] 
+ []
+
+<figure/unnamed-chunk-10-1.pdf, id=134, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-10-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-10-1.pdf  used on input line 684.
+
+(pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 684--685
+[][] 
+ []
+
+[21 <./figure/unnamed-chunk-10-1.pdf>] [22] (Chapter_5.aux) ) 
 Here is how much of TeX's memory you used:
- 4818 strings out of 492946
- 69029 string characters out of 3135527
- 139655 words of memory out of 3000000
- 8590 multiletter control sequences out of 15000+200000
+ 4853 strings out of 492946
+ 70266 string characters out of 3135527
+ 146655 words of memory out of 3000000
+ 8618 multiletter control sequences out of 15000+200000
  54925 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,32p,606b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
-it.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmt
-t12.pfb>
-Output written on Chapter_5.pdf (6 pages, 7015928 bytes).
+ 41i,6n,32p,767b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/
+dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt
+12.pfb>
+Output written on Chapter_5.pdf (22 pages, 7688526 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
