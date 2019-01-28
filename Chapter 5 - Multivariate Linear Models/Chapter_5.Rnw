@@ -46,6 +46,7 @@ opts_chunk$set(message=FALSE, # don't print R messages in pdf -- CHANGE TO FALSE
 suppressMessages(library(readxl, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
 suppressMessages(library(tidyverse, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
 suppressMessages(library(rethinking, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+
 @
 
 \section{Easy}
@@ -162,7 +163,6 @@ In the divorce data, States with high numbers of Mormons have much lower divorce
 \end{problem}
 
 <<warning=FALSE, message=FALSE>>=
-
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 mormon <- read_excel("Mormon.xlsx")

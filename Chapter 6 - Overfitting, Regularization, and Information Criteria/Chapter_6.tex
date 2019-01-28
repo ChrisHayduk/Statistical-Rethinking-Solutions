@@ -133,4 +133,50 @@ H(p) = -Elog(p_i) = -\sum_{i=1}^{n} p_ilog(p_i) \\ = -(0.3333*log(0.3333) + 0.33
 Write down and compare the definitions of AIC, DIC, and WAIC. Which of these criteria is most general? Which assumptions are required to transform a more general criterion into a less general one?
 \end{problem}
 
+Information criteria: \\
+AIC = D_train + 2p \\
+DIC = \overline{D} + (\overline{D} - \hat{D}) = \overline{D} + p_D \\
+WAIC = -2(lppd - p_WAIC)
+
+WAIC is the most general, as it does not require a multivariate Guassian posterior as in DIC & AIC, and it does not require uninformative priors as in AIC.
+
+\begin{problem}{6M2}
+\text{ }\\
+Explain the difference between model \texit{selection} and model \texit{averaging}. What information is lost under model selection? What information is lost under model averaging?
+\end{problem}
+
+Model selection involves using DIC/WAIC in combination with the estimates and posterior predictive checks from each model in order to choose the "best" model out of a given set. Model averaging means using DIC/WAIC to construct a posterior predictive distribution that exploits what we know about relative accuracy of the models. This helps guard against overconfidence in model structure, in the same way that using the entire posterior distrbution helps guard against overconfidence in parameter values.
+
+Model selection causes us to lose the information provided by the other models in the set that we're considering. Model averaging causes us to have a much more conservative (ie. wider) interval for $\mu$.
+
+\begin{problem}{6M3}
+\text{ }\\
+When comparing models with an information criterion, why must all models be fit to exactly the same observations? What would happen to the information criterion values if the models were fit to different numbers of observations? Perform some experiments if you are not sure.
+\end{problem}
+
+The model fit to fewer observations will almost always have a better deviance and AIC/DIC/WAIC value because it has been asked to predict less.
+
+\begin{problem}{6M4}
+\text{ }\\
+What happens to the effective number of parameters, as measured by DIC or WAIC, as a prior becomes more concentrated? Why? Perform some experiments if you are not sure.
+\end{problem}
+
+Regularizing priors constrain a model's flexibility. Since the effective number of parameters measures how flexible the model is, as a prior becomes more concentrated, it reduces the effective number of parameters.
+
+\begin{problem}{6M5}
+\text{ }\\
+Provide an informal explanation of why informative priors reduce overfitting.
+\end{problem}
+
+Informative priors are generally very narrow around their mean. That is, they tend to have small standard deviations. Since the machine will be very skeptical of values that are more than two standard deviations above or below the prior's mean, a small standard deviation will restrict the paramter to values close to the prior's mean.
+
+\begin{problem}{6M6}
+\text{ }\\
+Provide an informal explanation of why overly informative priors result in underfitting.
+\end{problem}
+
+An overly informative prior will have an excessively tight prior distribution. As a result, the parameter may be constrained to a range that does not contain its "true" value, thus causing the model to underfit the data.
+
+\section{Hard}
+
 \end{document}
