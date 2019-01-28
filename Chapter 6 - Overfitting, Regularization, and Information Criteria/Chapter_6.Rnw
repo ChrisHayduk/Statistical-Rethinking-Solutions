@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+
+\begin{document}
+
+\title{Statistical Rethinking: Chapter 6 - Overfitting, Regularization, and Information Criteria}
+
+\author{Chris Hayduk}
+\date{\today}
+
+\maketitle
+
+<<echo=F, results = 'hide', warning=FALSE, message=FALSE>>=
+# set the global chunk options
+opts_chunk$set(message=FALSE, # don't print R messages in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+               warning=FALSE) # don't print warnings in pdf -- CHANGE TO FALSE WHEN SUBMITTING FINAL VERSION!!!
+
+# load .RData files, .R files, etc.
+# R packages required
+suppressMessages(library(readxl, quietly=TRUE, warn.conflicts = FALSE,verbose = FALSE))
+suppressMessages(library(tidyverse, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+suppressMessages(library(rethinking, quietly=TRUE, warn.conflicts = FALSE, verbose=FALSE))
+@
+
+\section{Easy}
+
+\begin{problem}{6E1}
+\text{ }\\
+State the three motivating criteria that define information entropy.
+\end{problem}
+
+The three motivating criteria that define information entropy are:
+\begin{enumerate}
+	\item The measure of uncertainty should be continuous. If it were not, then an arbitrarily small change in any of the probabilities would result in a massive change in uncertainty.
+	\item The measure of uncertainty should increase as the number of possible events increases. For example, suppose there are two cities that need weather forecasts. In the first city, it rains on half of the days in the year and is sunny on the others. In the second, it rains, shines, and hails, each on 1 out of every 3 days in the year. We'd like our measure of uncertainty to be larger in the second city, where there is one more kind of event to predict.
+	\item The measure of uncertainty should be additive. What this means is that if we first measure the uncertainty about rain or shine (2 possible events) and then the uncertainty about hot or cold (2 different possible events), the uncertainty over the four combinations of these events - rain/hot, rain/cold, shine/hot, shine/cold - should be the sum of the separate uncertainties.
+\end{enumerate}
+
+\begin{problem}{6E2}
+\text{ }\\
+Suppose a coin is weighted such that, when it is tossed and lands on a table, it comes up heads 70\% of the time. What is the entropy of this coin?
+\end{problem}
+
+$$H(p) = -Elog(p_i) = -\sum_{i=1}^{n} p_ilog(p_i) = -(0.7*log(0.7) + 0.3*log(0.3)) \approx 0.610864$$
+
+\begin{problem}{6E3}
+\text{ }\\
+Suppose a four-sided die is loaded such that, when tossed onto a table, it shows "1" 20\%, "2" 25\%, "3" 25\%, and "4" 30\% of the time. What is the entropy of this die?
+\end{problem}
+
+\begin{multline*}
+H(p) = -Elog(p_i) = -\sum_{i=1}^{n} p_ilog(p_i) \\ = -(0.2*log(0.2) + 0.25*log(0.25) + 0.25*log(0.25) + 0.3*log(0.3)) \approx 1.37623
+\end{multline*}
+
+\begin{problem}{6E4}
+\text{ }\\
+Suppose another four-sided die is loaded such that it never shows "4". The other three sides show equally often. What is the entropy of this die?
+\end{problem}
+
+\begin{multline*}
+H(p) = -Elog(p_i) = -\sum_{i=1}^{n} p_ilog(p_i) \\ = -(0.3333*log(0.3333) + 0.3333*log(0.3333) + 0.3333*log(0.3333)) \approx 1.09498
+\end{multline*}
+
+\section{Medium}
+
+\begin{problem}{6M1}
+\text{ }\\
+Write down and compare the definitions of AIC, DIC, and WAIC. Which of these criteria is most general? Which assumptions are required to transform a more general criterion into a less general one?
+\end{problem}
+
+\end{document}
