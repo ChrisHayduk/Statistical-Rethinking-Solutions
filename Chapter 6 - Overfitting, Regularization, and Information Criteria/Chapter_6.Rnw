@@ -93,4 +93,18 @@ H(p) = -Elog(p_i) = -\sum_{i=1}^{n} p_ilog(p_i) \\ = -(0.3333*log(0.3333) + 0.33
 Write down and compare the definitions of AIC, DIC, and WAIC. Which of these criteria is most general? Which assumptions are required to transform a more general criterion into a less general one?
 \end{problem}
 
+\begin{multline}
+AIC = D_train + 2p \\
+DIC = \overline{D} + (\overline{D} - \hat{D}) = \overline{D} + p_D \\
+WAIC = -2(lppd - p_WAIC)
+\end{multline}
+
+WAIC is the most general, as it does not require a multivariate Guassian posterior as in DIC & AIC, and it does not require uninformative priors as in AIC.
+
+\begin{problem}{6M2}
+\text{ }\\
+Explain the difference between model \texit{selection} and model \texit{averaging}. What information is lost under model selection? What information is lost under model averaging?
+\end{problem}
+
+
 \end{document}
