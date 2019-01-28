@@ -152,7 +152,7 @@ Recall the globe tossing model from the chapter. Compute and plot the grid appro
 \hlstd{p_grid} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlkwc{from} \hlstd{=} \hlnum{0}\hlstd{,} \hlkwc{to} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{length.out} \hlstd{=} \hlnum{100}\hlstd{)}
 
 \hlcom{#Uniform prior - every value is 1}
-\hlstd{prior} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{20}\hlstd{)}
+\hlstd{prior} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{1}\hlstd{,} \hlkwd{length}\hlstd{(p_grid))}
 
 \hlcom{#W, W, W}
 
