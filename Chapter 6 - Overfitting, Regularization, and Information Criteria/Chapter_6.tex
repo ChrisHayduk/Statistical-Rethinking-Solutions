@@ -179,4 +179,50 @@ An overly informative prior will have an excessively tight prior distribution. A
 
 \section{Hard}
 
+All practice problems to follow use the same data. Pull out the old Howell !Kung demography data and split it into two equally sized data frames. Here's the code to do it:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(Howell1)}
+
+\hlstd{d} \hlkwb{<-} \hlstd{Howell1}
+
+\hlstd{d}\hlopt{$}\hlstd{age} \hlkwb{<-} \hlstd{(d}\hlopt{$}\hlstd{age} \hlopt{-} \hlkwd{mean}\hlstd{(d}\hlopt{$}\hlstd{age))}\hlopt{/}\hlkwd{sd}\hlstd{(d}\hlopt{$}\hlstd{age)}
+
+\hlkwd{set.seed}\hlstd{(}\hlnum{1000}\hlstd{)}
+
+\hlstd{i} \hlkwb{<-} \hlkwd{sample}\hlstd{(}\hlnum{1}\hlopt{:}\hlkwd{nrow}\hlstd{(d),} \hlkwc{size}\hlstd{=}\hlkwd{nrow}\hlstd{(d)}\hlopt{/}\hlnum{2}\hlstd{)}
+
+\hlstd{d1} \hlkwb{<-} \hlstd{d[i, ]}
+
+\hlstd{d2} \hlkwb{<-} \hlstd{d[}\hlopt{-}\hlstd{i, ]}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+You now have two randomly formed data frames, each with 272 rows. The notion here is to use the cases in d1 to fit models and the cases in d2 to evaluate them. The set.seed command just ensures that everyone works with the same randomly shuffled data.
+
+Now let \texit{h}\textsubscript{i} and \texit{x}\textsubscript{i} be the height and centered age values, respectively, on row \texit{i}. Fit the folowing models to the data in d1:
+\begin{itemize}
+\item M\textsubscript{1}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i}
+\item M\textsubscript{2}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2}
+\item M\textsubscript{2}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3}
+\item M\textsubscript{3}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3}
+\item M\textsubscript{4}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4}
+\item M\textsubscript{5}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4} + $\beta$\textsubscript{5}x\textsubscript{i}\textsuperscript{5}
+\item M\textsubscript{6}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4} + $\beta$\textsubscript{5}x\textsubscript{i}\textsuperscript{5} + $\beta$\textsubscript{6}x\textsubscript{i}\textsuperscript{6}
+\end{itemize}
+
+Use map to fit these. Use weakly regularizing priors for all parameters.
+
+Note that fitting all of these polynomials to the height-by-age relationship is not a good way to derive insight. It would be better to have a simpler approach that would allow for more insight, like perhaps a piecewise linear model. But the set of polynomial families above will serve to help you practice and understand model comparison and averaging.
+
 \end{document}

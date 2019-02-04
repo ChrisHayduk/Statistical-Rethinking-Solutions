@@ -140,4 +140,147 @@ An overly informative prior will have an excessively tight prior distribution. A
 
 \section{Hard}
 
+All practice problems to follow use the same data. Pull out the old Howell !Kung demography data and split it into two equally sized data frames. Here's the code to do it:
+
+<<warning=FALSE, message=FALSE>>=
+
+data(Howell1)
+
+d <- Howell1
+
+d$age <- (d$age - mean(d$age))/sd(d$age)
+
+set.seed(1000)
+
+i <- sample(1:nrow(d), size=nrow(d)/2)
+
+d1 <- d[i, ]
+
+d2 <- d[-i, ]
+
+@
+
+You now have two randomly formed data frames, each with 272 rows. The notion here is to use the cases in d1 to fit models and the cases in d2 to evaluate them. The set.seed command just ensures that everyone works with the same randomly shuffled data.
+
+Now let \texit{h}\textsubscript{i} and \texit{x}\textsubscript{i} be the height and centered age values, respectively, on row \texit{i}. Fit the folowing models to the data in d1:
+\begin{itemize}
+\item M\textsubscript{1}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i}
+\item M\textsubscript{2}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2}
+\item M\textsubscript{2}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3}
+\item M\textsubscript{3}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3}
+\item M\textsubscript{4}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4}
+\item M\textsubscript{5}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4} + $\beta$\textsubscript{5}x\textsubscript{i}\textsuperscript{5}
+\item M\textsubscript{6}: \texit{h}\textsubscript{i} $\sim$ Normal($\mu$\textsubscript{i}, $\sigma$)\\
+$\mu$\textsubscript{i} = $\alpha$ + $\beta$\textsubscript{1}x\textsubscript{i} + $\beta$\textsubscript{2}x\textsubscript{i}\textsuperscript{2} + $\beta$\textsubscript{3}x\textsubscript{i}\textsuperscript{3} + $\beta$\textsubscript{4}x\textsubscript{i}\textsuperscript{4} + $\beta$\textsubscript{5}x\textsubscript{i}\textsuperscript{5} + $\beta$\textsubscript{6}x\textsubscript{i}\textsuperscript{6}
+\end{itemize}
+
+Use map to fit these. Use weakly regularizing priors for all parameters.
+
+Note that fitting all of these polynomials to the height-by-age relationship is not a good way to derive insight. It would be better to have a simpler approach that would allow for more insight, like perhaps a piecewise linear model. But the set of polynomial families above will serve to help you practice and understand model comparison and averaging.
+
+<<warning=FALSE, message=FALSE>>=
+
+a.start <- mean(d1$height)
+sigma.start <- sd(d1$height)
+
+m1 <- map(
+  alist(
+    height ~ dnorm(a + b1*age, sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(10, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a = a.start, b1 = 0, sigma = sigma.start))
+
+m2 <- map(
+  alist(
+    height ~ dnorm(a + b1*age + b2*I(age^2), sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(0, 15),
+    b2 ~ dnorm(0, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a = a.start, b1 = 0, b2 = 0, sigma = sigma.start))
+
+m3 <- map(
+  alist(
+    height ~ dnorm(a + b1*age + b2*I(age^2) + b3*I(age^3), sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(0, 15),
+    b2 ~ dnorm(0, 15),
+    b3 ~ dnorm(0, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a = a.start, b1 = 0, b2 = 0, b3 = 0, sigma = sigma.start))
+
+m4 <- map(
+  alist(
+    height ~ dnorm(a + b1*age + b2*I(age^2) + b3*I(age^3) + b4*I(age^4), sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(0, 15),
+    b2 ~ dnorm(0, 15),
+    b3 ~ dnorm(0, 15),
+    b4 ~ dnorm(0, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a = a.start, b1 = 0, b2 = 0,
+                           b3 = 0, b4 = 0, sigma = sigma.start))
+
+m5 <- map(
+  alist(
+    height ~ dnorm(a + b1*age + b2*I(age^2) + 
+                     b3*I(age^3) + b4*I(age^4) + b5*I(age^5), sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(0, 15),
+    b2 ~ dnorm(0, 15),
+    b3 ~ dnorm(0, 15),
+    b4 ~ dnorm(0, 15),
+    b5 ~ dnorm(0, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a = a.start, b1 = 0, b2 = 0,
+                           b3 = 0, b4 = 0, b5 = 0, sigma = sigma.start))
+
+m6 <- map(
+  alist(
+    height ~ dnorm(a + b1*age + b2*I(age^2) + 
+                     b3*I(age^3) + b4*I(age^4) + 
+                     b5*I(age^5) + b6*I(age^6), sigma),
+    a ~ dnorm(a.start, 15),
+    b1 ~ dnorm(0, 15),
+    b2 ~ dnorm(0, 15),
+    b3 ~ dnorm(0, 15),
+    b4 ~ dnorm(0, 15),
+    b5 ~ dnorm(0, 15),
+    b6 ~ dnorm(0, 15),
+    sigma ~ dunif(0, 50)
+  ), data = d1, start=list(a=a.start, b1 = 0, b2 = 0,
+                           b3 = 0, b4 = 0, b5 = 0,
+                           b6 = 0, sigma = sigma.start))
+
+@
+
+\begin{problem}{6H1}
+\text{ }\\
+Compare the models above using WAIC. Compare the model rankings, as well as the WAIC weights.
+\end{problem}
+
+<<warning=FALSE, message=FALSE>>=
+
+model.comparison <- compare(m1, m2, m3, m4, m5, m6)
+
+print(model.comparison)
+
+@
+
+By WAIC, m4 should have the lowest average deviance on a new sample. Naturally m4 has the highest weight in the model comparison. Interestingly, m1, m2, and m3 have very small (sometimes 0) weights. This likely occurs because the WAIC values for m4, m5, and m6 are closely clustered together and thus all have a large share of the weight.
+
+<<warning=FALSE, message=FALSE>>=
+
+
+
+@
+
+
 \end{document}
