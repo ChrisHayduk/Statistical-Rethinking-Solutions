@@ -276,6 +276,11 @@ print(model.comparison)
 
 By WAIC, m4 should have the lowest average deviance on a new sample. Naturally m4 has the highest weight in the model comparison. Interestingly, m1, m2, and m3 have very small (sometimes 0) weights. This likely occurs because the WAIC values for m4, m5, and m6 are closely clustered together and thus all have a large share of the weight.
 
+\begin{problem}{6H2}
+\text{ }\\
+For each model, produce a plot with model averaged mean and 97\% confidence interval of the mean, superimposed on the raw data. How do predictions differ across models?
+\end{problem}
+
 <<warning=FALSE, message=FALSE>>=
 
 
